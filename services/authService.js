@@ -1,4 +1,4 @@
-const User = require("../models/User");
+const User = require("../models/user");
 
 // controller actions
 module.exports.signup_get = (req, res) => {
