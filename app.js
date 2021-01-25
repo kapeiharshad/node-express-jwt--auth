@@ -7,6 +7,8 @@ const app = express();
 // middleware
 app.use(express.static("public"));
 
+app.use(express.json()); // this is a alternate of body.parser
+
 // view engine
 app.set("view engine", "ejs");
 
@@ -19,7 +21,9 @@ mongoose
     useUnifiedTopology: true,
     useCreateIndex: true
   })
-  .then((result) => app.listen(3000))
+  .then((result) => {
+    app.listen(3000);
+  })
   .catch((err) => console.log(err));
 
 // routes
